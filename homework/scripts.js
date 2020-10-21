@@ -16,9 +16,9 @@ function calcArea() {
 
 function startLoop(id){
   var oldId;
-  //logic to prevent re-clicking button
+
   //var textNode = document.getElementById("animateArea");
-  console.log(oldId);
+  //console.log(oldId);
   if (typeof id !== 'undefined'){
   /*if (typeof id === 'undefined'){
     console.log("test");
@@ -31,12 +31,14 @@ function startLoop(id){
   //that is why there is no check for this one, sorry about that.
 
   if(isClicked && oldId != id){
-    console.log("test2");
+    //prevents re-adding previous string when button is clicked again
     return;
   }
   else{
+    //logic to prevent re-clicking button
     isClicked = true;
     oldId = id;
+    //calls animate if everything is okay
     animate_string(id);
   }
 }
@@ -45,18 +47,13 @@ function startLoop(id){
 function animate_string(id) {
     var element = document.getElementById(id);
     var textNode = document.getElementById("animateArea");
-
-
     textNode.innerHTML = element.value;
-
     var text = textNode.innerHTML;
-
 
     setInterval(function () {
         text = text[text.length - 1] + text.substring(0, text.length - 1);
         document.getElementById("animateArea").innerHTML = text;
-    }, 440);
-
+    }, 440); //time in ms
 }
 
 function guessNumberVisibility() {
@@ -64,6 +61,7 @@ function guessNumberVisibility() {
   var guess = document.getElementById("guess");
   var buton = document.getElementById("guessBut");
   var result = document.getElementById("result");
+  //toggle visibility when button is clicked again
   if (query.style.display === "none"){
     query.style.display = "block";
     guess.style.display = "block";
@@ -81,7 +79,7 @@ function guessNumberVisibility() {
 function check(){
     var guess = parseInt(document.getElementById("guess").value);
     var num = Math.ceil(Math.random() * 10);
-
+    //check whether box was left blank
     if (document.getElementById("guess").value == '')
         document.getElementById('result').innerHTML = 'Please enter a number!';
     else if (guess == num)
@@ -91,7 +89,6 @@ function check(){
 }
 
 function dateCalc() {
-
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1;
@@ -103,9 +100,9 @@ function dateCalc() {
     if (mm < 10){
         mm = '0' + mm;
     }
-
-    document.getElementById('p1').innerHTML = ("Month - Day - Year\n" + mm + "-" + dd + "-" + yyyy);
-    document.getElementById('p2').innerHTML = ("Month / Day / Year\n" + mm + "/" + dd + "/" + yyyy);
-    document.getElementById('p3').innerHTML = ("Day - Month - Year\n" + dd + "-" + mm + "-" + yyyy);
-    document.getElementById('p4').innerHTML = ("Day / Month / Year\n" + dd + "/" + mm + "/" + yyyy);
+    //set p elements to final values
+    document.getElementById('date1').innerHTML = ("Month - Day - Year\n" + mm + "-" + dd + "-" + yyyy);
+    document.getElementById('date2').innerHTML = ("Month / Day / Year\n" + mm + "/" + dd + "/" + yyyy);
+    document.getElementById('date3').innerHTML = ("Day - Month - Year\n" + dd + "-" + mm + "-" + yyyy);
+    document.getElementById('date4').innerHTML = ("Day / Month / Year\n" + dd + "/" + mm + "/" + yyyy);
 }

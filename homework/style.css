@@ -1,0 +1,23 @@
+.about{
+  width: 400px;
+}
+
+img{
+  style="display:inline;"
+}
+
+#guessBut{
+  display: none;
+}
+
+#result{
+  display: none;
+}
+
+#query{
+  display: none;
+}
+
+#guess{
+  display: none;
+}

@@ -5,26 +5,30 @@
     <meta charset="utf-8" />
     <title>HW1_MarkRuzinov_4187</title>
     <script src="scripts.js"></script>
-    <!--Homework Assignment Javascript-->
+    <link rel="stylesheet" href="style.css">
+    <!--Homework Assignment Javascript 1 -->
 
 </head>
 <body>
   <h1>A little about myself first.</h1>
-  <p style="width: 400px;">Hi, my name is Mark Ruzinov, and my UACS student ID is 4187. I started to study computer science and programming from a very young age of around 10 years old. I worked initially in C# and Visual Basic .NET with my dad before moving on to Linux
+  <p class="about">Hi, my name is Mark Ruzinov, and my UACS student ID is 4187. I started to study computer science and programming from a very young age of around 10 years old. I worked initially in C# and Visual Basic .NET with my dad before moving on to Linux
     system administration.</p>
-  <img style="display:inline;" src="me.jpg"> < That's me!</img>
-  <p style="width: 400px;">From there, I have continued to focus on mainly system administration, but with a little bit of Java, C++ and some bash scripting as well. For fun I like to travel, go on long
+  <img src="me.jpg"> < That's me!</img>
+  <p class="about">From there, I have continued to focus on mainly system administration, but with a little bit of Java, C++ and some bash scripting as well. For fun I like to travel, go on long
     car rides, hang out with friends, and play video games (haha).</p>
-  <h1>Homework 1 - Mark Ruzinov - 4187</h1>
-  <p style="width: 400px;">I know this looks like the example, however i did change how each function works and added some features (such as input sanitation, not being able to leave textboxes blank, etc)</p>
-    <div>
-        <input type="button" name="dateShow" value="Assigment 1" onclick="dateCalc()">
-        <p id='p1'></p>
-        <p id='p2'></p>
-        <p id='p3'></p>
-        <p id='p4'></p>
-    </div>
 
+<!-- End of assignment 1 -->
+<!-- Start of homework 2 -->
+
+  <h1>Homework 1 - Mark Ruzinov - 4187</h1>
+  <p class="about">I know this looks like the example given with lecture 3, however i did change how each function works and added some features (such as input sanitation, not being able to leave textboxes blank, etc.)</p>
+    <div>
+        <input type="button" name="dateShow" value="Return Dates" onclick="dateCalc()">
+        <p id='date1'></p>
+        <p id='date2'></p>
+        <p id='date3'></p>
+        <p id='date4'></p>
+    </div>
     <div>
         <input type="text" name="sideA" id="sideA" value="" size="3">cm
         <input type="text" name="sideB" id="sideB" value="" size="3">cm
@@ -46,14 +50,14 @@
 
     <div>
 
-       <input type="button" name="guiess" value="Assigment 4" onclick="guessNumberVisibility()">
+       <input type="button" name="guess" value="Assigment 4" onclick="guessNumberVisibility()">
        <br>
-       <p id="query" style="display:none">Please enter a number from one to ten (inclusive):</p>
-       <input type="text" name="guess" id="guess" value="" size="3" style="display:none;"></input>
+       <p id="query">Please enter a number from one to ten (inclusive):</p>
+       <input type="text" name="guess" id="guess" value="" size="3"></input>
        <br>
-       <input style="display:none;" type="button" name="makeGuess" id="guessBut" value="Submit" onclick="check('guess')">
+       <input type="button" name="makeGuess" id="guessBut" value="Submit" onclick="check('guess')">
 
-       <p style="display:none" id="result"></p>
+       <p id="result"></p>
     </div>
 </body>
 </html>
