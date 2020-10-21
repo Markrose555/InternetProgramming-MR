@@ -6,10 +6,12 @@
     <title>HW1_MarkRuzinov_4187</title>
     <script src="scripts.js"></script>
     <link rel="stylesheet" href="style.css">
-    <!--Homework Assignment Javascript 1 -->
-
 </head>
+
 <body>
+
+  <!-- Start of homework 1 -->
+
   <h1>A little about myself first.</h1>
   <p class="about">Hi, my name is Mark Ruzinov, and my UACS student ID is 4187. I started to study computer science and programming from a very young age of around 10 years old. I worked initially in C# and Visual Basic .NET with my dad before moving on to Linux
     system administration.</p>
@@ -17,11 +19,13 @@
   <p class="about">From there, I have continued to focus on mainly system administration, but with a little bit of Java, C++ and some bash scripting as well. For fun I like to travel, go on long
     car rides, hang out with friends, and play video games (haha).</p>
 
-<!-- End of assignment 1 -->
+<!-- End of homework 1 -->
 <!-- Start of homework 2 -->
 
   <h1>Homework 1 - Mark Ruzinov - 4187</h1>
+
   <p class="about">I know this looks like the example given with lecture 3, however i did change how each function works and added some features (such as input sanitation, not being able to leave textboxes blank, etc.)</p>
+<!-- Date display assignment -->
     <div>
         <input type="button" name="dateShow" value="Return Dates" onclick="dateCalc()">
         <p id='date1'></p>
@@ -29,35 +33,31 @@
         <p id='date3'></p>
         <p id='date4'></p>
     </div>
+<!-- Area of triangle assignment -->
     <div>
         <input type="text" name="sideA" id="sideA" value="" size="3">cm
         <input type="text" name="sideB" id="sideB" value="" size="3">cm
         <input type="text" name="sideC" id="sideC" value="" size="3">cm
-
         <input type="button" name="calcArea" value="Assigment 2" onclick="calcArea()">
-
         <p id="area" name="area"></p>
-
     </div>
-
+<!-- Carousel text assignment -->
     <div>
         <input type="text" name="targetInput" id="targetInput">
 
         <input type="button" name="animate" value="Assigment 3" onclick="startLoop('targetInput')">
         <p id="animateArea" name="animateArea"></p>
-
     </div>
-
+<!-- Number guessing assignment -->
     <div>
-
        <input type="button" name="guess" value="Assigment 4" onclick="guessNumberVisibility()">
        <br>
        <p id="query">Please enter a number from one to ten (inclusive):</p>
        <input type="text" name="guess" id="guess" value="" size="3"></input>
        <br>
        <input type="button" name="makeGuess" id="guessBut" value="Submit" onclick="check('guess')">
-
        <p id="result"></p>
     </div>
+
 </body>
 </html>
