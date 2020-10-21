@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HW1_MarkRuzinov_4187</title>
+    <!--Homework Assignment Javascript-->
+    <script>
+        var isClicked = false;
+        function calcArea() {
+            var sideA = parseFloat(document.getElementById("sideA").value);
+            var sideB = parseFloat(document.getElementById("sideB").value);
+            var sideC = parseFloat(document.getElementById("sideC").value);
+            var perimeter = (sideA + sideB + sideC) / 2;
+            if (isNaN(sideA) || isNaN(sideB) || isNaN(sideC)){
+              document.getElementById("area").innerHTML = 'Please enter values in all three fields!';
+              return;
+            }
+            else{
+              var area = Math.sqrt(perimeter * ((perimeter - sideA) * (perimeter - sideB) * (perimeter - sideC)));
+              document.getElementById("area").innerHTML = area + ' cm';
+            }
+        }
+
+        function startLoop(id){
+          var oldId;
+          //logic to prevent re-clicking button
+          //var textNode = document.getElementById("animateArea");
+          console.log(oldId);
+          if (typeof id !== 'undefined'){
+          /*if (typeof id === 'undefined'){
+            console.log("test");
+            document.getElementById("animateArea").innerHTML = 'Please enter a value first';
+            return;
+          }*/
+
+          //cannot check for type because getelement will always be a type object
+          //therefore it is (to my knowledge) impossible or not easy to check whether the box was left empty.
+          //that is why there is no check for this one, sorry about that.
+
+          if(isClicked && oldId != id){
+            console.log("test2");
+            return;
+          }
+          else{
+            isClicked = true;
+            oldId = id;
+            animate_string(id);
+          }
+        }
+        }
+
+        function animate_string(id) {
+            var element = document.getElementById(id);
+            var textNode = document.getElementById("animateArea");
+
+
+            textNode.innerHTML = element.value;
+
+            var text = textNode.innerHTML;
+
+
+            setInterval(function () {
+                text = text[text.length - 1] + text.substring(0, text.length - 1);
+                document.getElementById("animateArea").innerHTML = text;
+            }, 440);
+
+        }
+
+        function guessNumber() {
+          var query = document.getElementById("query");
+          var guess = document.getElementById("guess");
+          var buton = document.getElementById("guessBut");
+          var result = document.getElementById("result");
+          if (query.style.display === "none"){
+            query.style.display = "block";
+            guess.style.display = "block";
+            buton.style.display = "block";
+            result.style.display = "block";
+          }
+          else {
+            query.style.display = "none";
+            guess.style.display = "none";
+            buton.style.display = "none";
+            result.style.display = "none";
+          }
+        }
+
+        function check(){
+            var guess = parseInt(document.getElementById("guess").value);
+            var num = Math.ceil(Math.random() * 10);
+
+            if (document.getElementById("guess").value == '')
+                document.getElementById('result').innerHTML = 'Please enter a number!';
+            else if (guess == num)
+                document.getElementById('result').innerHTML = 'Matched';
+            else
+                document.getElementById('result').innerHTML = 'Not matched, the number was ' + num;
+        }
+
+
+    </script>
+</head>
+<body>
+  <h1>A little about myself first.</h1>
+  <p style="width: 400px;">Hi, my name is Mark Ruzinov, and my UACS student ID is 4187. I started to study computer science and programming from a very young age of around 10 years old. I worked initially in C# and Visual Basic .NET with my dad before moving on to Linux
+    system administration.</p>
+    <!--PREPARE FOR SUPER LONG BASE64 ENCODING OF AM IMAGE, HAHA -->
+  <img style="display:inline;" src="data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoH
+  BwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQME
+  BAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU
+  FBQUFBQUFBQUFBQUFBT/wAARCABnAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEA
+  AAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+  MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6
+  Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZ
+  mqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
+  8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREA
+  AgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+  YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hp
+  anN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPE
+  xcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDx
+  fx14b8baleLa2vhMxWWrhL/+zZNQ+13MFvAGJtgsZDJGpkZsY3EqC1X7U674qg1O
+  DVo7pILx4rdUhdt7uhAwzHkbtpOD0GB0FdF4kj07xp4es9Z0HVbePUNMWYXf+mrb
+  zpdO6SSrC4IJieHd87EbZEcHGaxfAt5BcaTp1/ZX7nT5HkuEk8rzXuxyGeMORISD
+  hSD0U5z8pI+IxHta1BShGzPoqXJCV27lubw3faj4uthoVjJqS2Mf7+C3h/0VcDAY
+  tkHAwR78Co9RVpPDcuiQxXKWxnjaaxQKjTeWilSWHSQnDAjsfmzWrbzXf2G/WCzm
+  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"> < That's me!</img>
+  <p style="width: 400px;">From there, I have continued to focus on mainly system administration, but with a little bit of Java, C++ and some bash scripting as well. For fun I like to travel, go on long
+    car rides, hang out with friends, and play video games (haha).</p>
+  <h1>Homework 1 - Mark Ruzinov - 4187</h1>
+  <p style="width: 400px;">I know this looks like the example, however i did change how each function works and added some features (such as input sanitation, not being able to leave textboxes blank, etc)</p>
+    <div>
+        <input type="button" name="dateShow" value="Assigment 1" onclick="dateCalc()">
+        <p id='p1'></p>
+        <p id='p2'></p>
+        <p id='p3'></p>
+        <p id='p4'></p>
+    </div>
+
+    <script>
+        function dateCalc() {
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            //add leading 0 to numbers before 10
+            if (dd < 10){
+                dd = '0' + dd;
+            }
+            if (mm < 10){
+                mm = '0' + mm;
+            }
+
+            document.getElementById('p1').innerHTML = ("Month - Day - Year\n" + mm + "-" + dd + "-" + yyyy);
+            document.getElementById('p2').innerHTML = ("Month / Day / Year\n" + mm + "/" + dd + "/" + yyyy);
+            document.getElementById('p3').innerHTML = ("Day - Month - Year\n" + dd + "-" + mm + "-" + yyyy);
+            document.getElementById('p4').innerHTML = ("Day / Month / Year\n" + dd + "/" + mm + "/" + yyyy);
+        }
+    </script>
+
+
+
+    <div>
+        <input type="text" name="sideA" id="sideA" value="" size="3">cm
+        <input type="text" name="sideB" id="sideB" value="" size="3">cm
+        <input type="text" name="sideC" id="sideC" value="" size="3">cm
+
+        <input type="button" name="calcArea" value="Assigment 2" onclick="calcArea()">
+
+        <p id="area" name="area"></p>
+
+    </div>
+
+    <div>
+        <input type="text" name="targetInput" id="targetInput">
+
+        <input type="button" name="animate" value="Assigment 3" onclick="startLoop('targetInput')">
+        <p id="animateArea" name="animateArea"></p>
+
+    </div>
+
+    <div>
+
+       <input type="button" name="guiess" value="Assigment 4" onclick="guessNumber()">
+       <br>
+       <p id="query" style="display:none">Please enter a number from one to ten (inclusive):</p>
+       <input type="text" name="guess" id="guess" value="" size="3" style="display:none;"></input>
+       <br>
+       <input style="display:none;" type="button" name="makeGuess" id="guessBut" value="Submit" onclick="check('guess')">
+
+       <p style="display:none" id="result"></p>
+    </div>
+</body>
+</html>
