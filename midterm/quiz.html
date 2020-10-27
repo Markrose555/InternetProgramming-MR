@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Quiz</title>
+  </head>
+  <body>
+      <div id="header">
+        <img src="header.gif">
+      </div>
+      <div id="sidebar">
+        <p id="copyright">Mark Ruzinov 4187</p>
+        <h2><i>Menu</i></h2>
+        <div id="sidebar-buttons">
+          <button class="menubutton" onclick="location.href='exams.html'">Home</button>
+          <br />
+          <br />
+          <button class="menubutton" onclick="location.href='quiz.html'">Quiz</button>
+          <br />
+          <br />
+          <button class="menubutton" onclick="location.href='contact.html'">Contact</button>
+        </div>
+      </div>
+      <div id="bodydiv">
+        <form>
+          <label for="fname">Name:</label><br>
+          <input type="text" id="fname" name="fname" value=""><br>
+          <label for="id">ID:</label><br>
+          <input type="number" id="id" name="id" value="">
+        </form>
+        <h3>1: Inside which HTML element do we put the javascript? (choose one):</h3>
+        <br />
+        <br />
+        <form>
+          <input type="radio" id="scripting" name="q1" value="scripting">
+          <label for="scripting">&lt;scripting&gt;</label><br>
+          <input type="radio" id="js" name="q1" value="js">
+          <label for="js">&lt;js&gt;</label><br>
+          <input type="radio" id="javascript" name="q1" value="javascript">
+          <label for="javascript">&lt;javascript&gt;</label><br>
+          <input type="radio" id="script" name="q1" value="scipt">
+          <label for="script">&lt;script&gt;</label>
+        </form>
+
+        <h3>2: The external JavaScript file must contain the &lt;script&gt; tag (check all that apply):</h3>
+        <br />
+        <br />
+        <form>
+          <input type="checkbox" id="t" name="q2" value="t">
+          <label for="t">True</label><br>
+          <input type="checkbox" id="f" name="q2" value="f">
+          <label for="f">False</label><br>
+          <input type="checkbox" id="none" name="q2" value="none">
+          <label for="none">None</label><br>
+          <input type="checkbox" id="both" name="q2" value="both">
+          <label for="both">Both</label>
+        </form>
+
+        <h3>3: How do you write the string "Hello World" in an alert box? (select option):</h3>
+        <br />
+        <br />
+        <form>
+          <input type="radio" id="alert" name="q3" value="alert">
+          <label for="alert">Alert("Hello World");</label><br>
+          <input type="radio" id="alertbox" name="q3" value="alertbox">
+          <label for="alertbox">alertBox("Hello World");</label><br>
+          <input type="radio" id="msg" name="q3" value="msg">
+          <label for="msg">msg("Hello World");</label><br>
+          <input type="radio" id="msgbox" name="q3" value="msgbox">
+          <label for="msgbox">msgBox("Hello World");</label>
+        </form>
+        <p> <!-- a br tag doesnt work here for some reason -->
+        <input type="button" name="submit" id="submit" value="Submit" onclick="quiz()"></input>
+        <h3 id="result"></h3>
+        <h3 id="timetaken"></h3>
+      </div>
+  </body>
+</html>

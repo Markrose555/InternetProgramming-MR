@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Contact</title>
+  </head>
+  <body>
+      <div id="header">
+        <img src="header.gif">
+      </div>
+      <div id="sidebar">
+        <p id="copyright">Mark Ruzinov 4187</p>
+        <h2><i>Menu</i></h2>
+        <div id="sidebar-buttons">
+          <button class="menubutton" onclick="location.href='exams.html'">Home</button>
+          <br />
+          <br />
+          <button class="menubutton" onclick="location.href='quiz.html'">Quiz</button>
+          <br />
+          <br />
+          <button class="menubutton" onclick="location.href='contact.html'">Contact</button>
+        </div>
+      </div>
+      <div id="bodydiv">
+        <form id="info">
+          <label for="id">Surname:</label><br>
+          <input type="text" id="sname" name="sname" value="" required><br><br>
+          <label for="fname">Name:</label><br>
+          <input type="text" id="fname" name="fname" value="" required><br><br>
+          <label for="id">Student ID:</label><br>
+          <input type="number" id="studentid" name="studentid" value="" required><br><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" value="" required><br><br>
+          <label for="notes">Notes:</label><br>
+          <input type="text" id="notes" name="notes" value="" width="48" height="48"><br><br>
+        </form>
+          <input type="submit" id="save" name="save" value="Save" onclick="reserve()">
+        <p id="status"></p>
+      </div>
+  </body>
+</html>
