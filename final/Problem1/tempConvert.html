@@ -1,0 +1,32 @@
+<!--Mark Ruzinov, ID 4187-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script type="text/javascript">
+function TemperatureConversion(){
+	temp=document.getElementById("inputVar").value
+	if (temp){
+		document.getElementById("returnedTemp").innerHTML="Please enter a value";
+		return false;
+	}
+	if (window.XMLHttpRequest){
+  		xmlhttp=new XMLHttpRequest();
+  	}else {
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	xmlhttp.onreadystatechange=function(){
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		    document.getElementById("returnedTemp").innerHTML=xmlhttp.responseText + "&#176;";
+    	}
+  	}
+	xmlhttp.open("GET","tempFtoC.php?tempF="+temp,true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+	Temperature in F: <input type="Text" name="inputVar" id="inputVar">
+	<strong><div id="returnedTemp" >&nbsp;</div></strong>
+	<button type="button" onclick="TemperatureConversion()">Calculate</button>
+</body>
+</html>
